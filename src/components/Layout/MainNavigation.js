@@ -10,6 +10,14 @@ const MainNavigation = () => {
   const authCtx = useContext(AuthContext);
 
   const isLoggedIn = authCtx.isLoggedIn;
+
+  const logoutHnadler = () => {
+
+    authCtx.logout();
+    // optional redirect the user
+
+
+  };
   return (
     <header className={classes.header}>
       <Link to='/'>
@@ -30,7 +38,7 @@ const MainNavigation = () => {
           }
           {isLoggedIn &&
             <li>
-              <button>Logout</button>
+              <button onClick={logoutHnadler}>Logout</button>
             </li>
           }
         </ul>
